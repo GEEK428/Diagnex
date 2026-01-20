@@ -1,0 +1,28 @@
+.profile-menu {
+  position: absolute;
+  top: 46px;
+  right: 0;
+  width: 180px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  padding: 6px 0;
+  z-index: 1000;
+}
+
+.menu-item {
+  padding: 10px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-item:hover {
+  background: #f3f4f6;
+}
+
+.menu-item.danger {
+  color: #dc2626;
+}

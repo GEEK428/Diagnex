@@ -1,0 +1,220 @@
+/* ===== White base (dashboard style) ===== */
+.code-search-shell {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 1150px;
+}
+
+/* ===== Page ===== */
+.code-search {
+  width: 100%;
+}
+
+.code-search h1 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+/* ===== Main Search Row ===== */
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px; /* tighter gap to AI search */
+}
+
+.search-input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  height: 36px;                /* 🔑 fixes border cutoff */
+  padding: 0 10px;             /* vertical padding removed */
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.search-input input {
+  border: none;
+  outline: none;
+  font-size: 12.5px;
+  line-height: 1;              /* 🔑 prevents text drop */
+  flex: 1;
+}
+
+.search-input svg {
+  width: 14px;
+  height: 14px;
+  color: #6b7280;
+}
+
+/* System dropdown */
+.search-row select {
+  height: 36px;                /* exact match with search */
+  padding: 0 10px;
+  font-size: 12.5px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+}
+
+/* ===== AI Search ===== */
+.ai-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 34px;
+  padding: 0 10px;
+
+  border: 1px dashed #a7f3d0;
+  border-radius: 6px;
+
+  margin-bottom: 6px;          /* 🔑 reduced gap */
+}
+
+.ai-row svg {
+  width: 14px;
+  height: 14px;
+  color: #0f766e;
+}
+
+.ai-row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 12.5px;
+  line-height: 1;
+}
+
+.ai-row button {
+  background: none;
+  border: none;
+  color: #0f766e;
+  font-size: 12.5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ===== Filters Row ===== */
+.filters {
+  display: flex;
+  align-items: center;         /* 🔑 baseline fix */
+  gap: 18px;
+
+  font-size: 12.5px;
+  line-height: 1;              /* 🔑 text alignment */
+
+  margin-bottom: 16px;
+}
+
+/* Checkbox + label */
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* Minimum confidence text */
+.filters span,
+.filters label {
+  line-height: 1;              /* 🔑 keeps text centered */
+}
+
+/* Confidence input */
+/* Restore native checkbox appearance */
+.filters input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+
+  width: 14px;
+  height: 14px;
+  margin: 0;
+
+  cursor: pointer;
+}
+.filters label {
+  cursor: pointer;
+}
+.filters input[type="number"] {
+  cursor: text;
+}
+
+
+/* Search button */
+.primary {
+  height: 30px;                /* exact alignment */
+  padding: 0 16px;
+
+  font-size: 13px;
+  line-height: 1;
+
+  background: #0f766e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== Results ===== */
+.results h2 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-top: 1px solid #f1f5f9;
+}
+
+.result h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.result p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===== Tags ===== */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f1f5f9;
+}
+
+.tag.NAMASTE {
+  background: #ccfbf1;
+}
+
+.tag.ICD11_TM2 {
+  background: #dbeafe;
+}
+
+.tag.ICD11_BIOMED {
+  background: #ede9fe;
+}
+
+.tag.confidence {
+  background: #dcfce7;
+}

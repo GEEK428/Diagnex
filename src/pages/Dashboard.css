@@ -1,0 +1,173 @@
+.dashboard {
+  padding: 24px;
+  max-width: 1150px;
+}
+
+/* Header */
+.header h1 {
+  font-size: 23px;          /* was 26 */
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.header p {
+  font-size: 12.5px;        /* was 13 */
+  color: #6b7280;
+}
+
+.welcome {
+  font-size: 13.5px;        /* was 15 */
+  color: #6b7280;
+  margin-top: 10px;         /* was 13 */
+}
+
+/* Back */
+.back {
+  background: none;
+  border: none;
+  font-size: 12.5px;        /* was 13 */
+  color: #0f766e;
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;      /* was 12 */
+  cursor: pointer;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;                /* was 16 */
+  margin: 18px 0;           /* was 22 */
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;            /* was 14 */
+  display: flex;
+  gap: 10px;                /* was 12 */
+  align-items: center;
+}
+
+.stat .icon {
+  color: #0f766e;
+}
+
+.label {
+  font-size: 11.5px;        /* was 12 */
+  color: #6b7280;
+}
+
+.value {
+  font-size: 17px;          /* was 19 */
+  font-weight: 600;
+}
+
+/* Actions */
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;                /* was 14 */
+  margin-bottom: 20px;      /* was 24 */
+}
+
+.action {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  padding: 10px;            /* was 12 */
+  font-size: 13px;          /* was 14 */
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Panels */
+.panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;            /* was 20 */
+}
+
+.panel h2 {
+  font-size: 14px;          /* was 15 */
+  margin-bottom: 10px;      /* was 12 */
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 7px 9px;         /* was 8px 10px */
+  font-size: 13px;          /* was 14 */
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 8px;       /* was 10 */
+}
+
+.primary {
+  background: #0f766e;
+  color: #fff;
+  border: none;
+  padding: 7px 12px;        /* was 8px 14px */
+  font-size: 13px;          /* was 14 */
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Progress */
+.progress {
+  height: 5px;              /* was 6 */
+  background: #e5e7eb;
+  border-radius: 4px;
+  margin-top: 8px;          /* was 10 */
+}
+
+.progress div {
+  height: 100%;
+  background: #0f766e;
+  border-radius: 4px;
+}
+
+/* Activity */
+.activity {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;            /* was 16 */
+}
+
+.activity h2 {
+  font-size: 16px;          /* was 18 */
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;       /* was 8 */
+}
+
+.activity-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;           /* was 10 */
+  border-top: 1px solid #f1f5f9;
+}
+
+.activity-row span {
+  display: block;
+  font-size: 11.5px;        /* was 12 */
+  color: #6b7280;
+}
+
+.activity-row time {
+  font-size: 11.5px;        /* was 12 */
+  color: #9ca3af;
+}
+
+.muted {
+  font-size: 12.5px;        /* was 13 */
+  color: #9ca3af;
+}

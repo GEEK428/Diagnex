@@ -1,0 +1,129 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* ================= THEME VARIABLES ================= */
+/* ---------- THEME VARIABLES ---------- */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-header: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --accent: #14b8a6;
+  --border: #e5e7eb;
+}
+
+body.dark-mode {
+  --bg-main: #0b1220;        /* main background */
+  --bg-card: #111827;        /* cards */
+  --bg-sidebar: #020617;     /* sidebar */
+  --bg-header: #020617;      /* header */
+
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+
+  --accent: #22d3ee;         /* cyan accent */
+  --border: #1f2937;
+}
+
+/* ================= HEADER ================= */
+/* ================= HEADER ================= */
+
+
+
+
+/* ================= APP LAYOUT ================= */
+.app-shell {
+  display: flex;
+  height: calc(100vh - 40px);
+  background: var(--bg-main);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 220px;
+ background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  padding: 14px 10px;
+  flex-shrink: 0;
+}
+
+/* Sidebar items */
+.side-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.side-item:hover {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.side-item.active {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent);
+  border-right: 3px solid var(--accent);
+}
+
+/* ================= MAIN CONTENT ================= */
+.app-main {
+  flex: 1;
+  padding: 32px;
+ background: var(--bg-main);
+  overflow-y: auto;
+}
+
+/* ================= CARDS ================= */
+.dashboard,
+.home-card,
+.profile-card,
+.settings-card,
+.stat-card,
+.card-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* ================= HOME ================= */
+.home-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-wrapper p {
+  color: var(--text-muted);
+}
+
+/* ================= DASHBOARD TEXT ================= */
+.dashboard-header p,
+.stat-label,
+.activity-sub,
+.activity-time {
+  color: var(--text-muted);
+}
