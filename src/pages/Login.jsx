@@ -8,19 +8,13 @@ import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
-
-  /* 🌙 Dark mode (persistent) */
   const [dark, setDark] = useState(
     localStorage.getItem("theme") === "dark"
   );
-
-  /* 🔐 Form state */
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
-
-  /* 🔒 Password strength */
   const strength = getPasswordStrength(password);
 
   useEffect(() => {
@@ -60,15 +54,13 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     if (!validate()) return;
-
-    // 🔐 mock auth
     localStorage.setItem("jwt", "mock-token");
     navigate("/app");
   };
 
   return (
     <>
-      {/* 🌙 Dark mode toggle */}
+      {}
       <div
         className="theme-toggle"
         onClick={() => setDark(!dark)}
@@ -89,7 +81,7 @@ export default function Login() {
           </div>
 
           <form onSubmit={handleLogin} noValidate>
-            {/* Email */}
+            {}
             <div className="mb-3">
               <label className="form-label">
                 Email

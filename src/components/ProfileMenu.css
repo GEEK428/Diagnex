@@ -9,7 +9,6 @@
   padding: 6px 0;
   z-index: 1000;
 }
-
 .menu-item {
   padding: 10px 14px;
   display: flex;
@@ -18,11 +17,9 @@
   cursor: pointer;
   font-size: 14px;
 }
-
 .menu-item:hover {
   background: #f3f4f6;
 }
-
 .menu-item.danger {
   color: #dc2626;
 }

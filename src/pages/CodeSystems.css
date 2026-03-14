@@ -5,8 +5,6 @@
   padding: 24px;
   max-width: 1150px;
 }
-
-/* Header */
 .cs-header {
   display: flex;
   justify-content: space-between;
@@ -31,8 +29,6 @@
   align-items: center;
   cursor: pointer;
 }
-
-/* Create form */
 .cs-create {
   background: #fff;
   border: 1px solid #e5e7eb;
@@ -45,7 +41,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;   /* ⬅️ reduced */
+  margin-bottom: 8px; 
 }
 
 .cs-create-head h2 {
@@ -64,11 +60,11 @@
   color: #111827;
 }
 
-/* Form */
+
 .cs-form {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  gap: 8px 12px;   /* ⬅️ smaller vertical gap */
+  gap: 8px 12px;
 }
 
 
@@ -76,21 +72,18 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: 3px; /* reduced */
+  gap: 3px;
 }
 
 .field.wide {
   grid-column: span 3;
-  margin-top: 2px;        /* ⬅️ was too large earlier */
+  margin-top: 2px; 
 }
-
-
-
 .cs-form label {
   font-size: 12px;
-  display: inline-flex;     /* ⬅️ inline alignment */
+  display: inline-flex;   
   align-items: center;
-  gap: 4px;                 /* ⬅️ star close to text */
+  gap: 4px;           
   margin-bottom: 4px;
 }
 
@@ -101,21 +94,16 @@
 }
 
 .cs-form input {
-  padding: 5px 8px;        /* ⬅️ reduced height */
+  padding: 5px 8px;   
   font-size: 12.5px;
   border-radius: 6px;
   border: 1px solid #d1d5db;
 }
-
-
-
-/* Active checkbox */
-/* Active row — FULL WIDTH, LEFT */
 .active-row {
   grid-column: span 3;
   display: flex;
   align-items: center;
-  margin-top: 4px;        /* ⬅️ very close to Source URL */
+  margin-top: 4px;
 }
 
 .checkbox {
@@ -130,17 +118,12 @@
   margin: 0;
   cursor: pointer;
 }
-
-
-
-
-/* Actions */
 .cs-actions {
   grid-column: span 3;
   display: flex;
   justify-content: flex-end;
   gap: 8px;
-  margin-top: 6px;    /* ⬅️ reduced */
+  margin-top: 6px;
 }
 
 
@@ -160,12 +143,9 @@
   color: #6b7280;
   cursor: pointer;
 }
-
-/* Search */
-/* Compact filter search */
 .cs-search {
   display: flex;
-  align-items: center;     /* ⬅️ THIS is critical */
+  align-items: center;
   gap: 6px;
 
   border: 1px solid #d1d5db;
@@ -176,34 +156,27 @@
 
   background: #fff;
 }
-
-/* Icon alignment */
 .cs-search svg {
   width: 14px;
   height: 14px;
   color: #9ca3af;
 
   flex-shrink: 0;
-  display: block;         /* ⬅️ removes inline baseline weirdness */
+  display: block;    
 }
-
-/* Input alignment */
 .cs-search input {
   border: none;
   outline: none;
 
   font-size: 12.5px;
-  line-height: 1.4;       /* ⬅️ normalize text baseline */
+  line-height: 1.4;     
 
-  padding: 0;             /* ⬅️ VERY IMPORTANT */
+  padding: 0;       
   margin: 0;
 
   width: 100%;
   background: transparent;
 }
-
-
-/* Table */
 .cs-table {
   border: 1px solid #e5e7eb;
   border-radius: 10px;

@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import "./Dashboard.css";
 const user = {
-  name: "Dr. Sarah Wilson" // later replace with real profile data
+  name: "Dr. Sarah Wilson" 
 };
 
 

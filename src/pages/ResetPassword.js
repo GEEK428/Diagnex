@@ -34,8 +34,6 @@ export default function ResetPassword() {
       setError("Password is too weak");
       return;
     }
-
-    // mock success → redirect to login
     navigate("/");
   };
 

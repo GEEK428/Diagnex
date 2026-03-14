@@ -9,8 +9,6 @@ import "./Login.css";
 
 export default function Register() {
   const navigate = useNavigate();
-
-  /* 🌙 Persistent dark mode */
   const [dark, setDark] = useState(
     localStorage.getItem("theme") === "dark"
   );
@@ -20,7 +18,7 @@ export default function Register() {
     gender: "",
     email: "",
     phone: "",
-    countryCode: "in", // auto-detected from phone
+    countryCode: "in",
     hospital: "",
     hospitalOther: "",
     address: "",
@@ -34,8 +32,6 @@ export default function Register() {
     document.body.classList.toggle("dark-mode", dark);
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
-
-  /* 🏥 Hospitals by country (extend anytime) */
   const hospitalsByCountry = {
     in: [
       "AIIMS Delhi",
@@ -107,7 +103,7 @@ export default function Register() {
 
   return (
     <>
-      {/* 🌙 Dark toggle */}
+      {}
       <div className="theme-toggle" onClick={() => setDark(!dark)}>
         {dark ? "☀️" : "🌙"}
       </div>
@@ -124,7 +120,7 @@ export default function Register() {
 
           <form onSubmit={handleRegister} noValidate>
 
-            {/* Full Name */}
+            {}
             <label className="form-label">Full Name</label>
             <input
               className={`form-control mb-2 ${errors.name ? "is-invalid" : ""}`}
@@ -134,7 +130,7 @@ export default function Register() {
               }
             />
 
-            {/* Gender */}
+            {}
             <label className="form-label">Gender</label>
             <select
               className={`form-control mb-2 ${errors.gender ? "is-invalid" : ""}`}
@@ -148,7 +144,7 @@ export default function Register() {
               <option>Other</option>
             </select>
 
-            {/* Email */}
+            {}
             <label className="form-label">Email</label>
             <input
               type="email"
@@ -159,7 +155,7 @@ export default function Register() {
               }
             />
 
-            {/* Phone (auto-detect country) */}
+            {}
             <label className="form-label">Contact Number</label>
             <PhoneInput
               country={form.countryCode}
@@ -193,7 +189,7 @@ export default function Register() {
               </div>
             )}
 
-            {/* Hospital */}
+            {}
             <label className="form-label">Hospital / Organization</label>
             <Select
               options={hospitalOptions}
@@ -228,7 +224,7 @@ export default function Register() {
               </div>
             )}
 
-            {/* Other hospital */}
+            {}
             {form.hospital === "Other" && (
               <input
                 className={`form-control mt-2 ${

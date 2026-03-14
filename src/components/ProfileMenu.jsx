@@ -9,13 +9,11 @@ export default function ProfileMenu({ close }) {
     close();
     navigate(path);
   };
-
   const logout = () => {
     localStorage.removeItem("jwt");
     close();
     navigate("/");
   };
-
   return (
     <div className="profile-menu">
       <div className="menu-item" onClick={() => go("/app/profile")}>

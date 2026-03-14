@@ -6,7 +6,6 @@ import {
   FaUpload,
 } from "react-icons/fa";
 import "./Sidebar.css";
-
 export default function Sidebar() {
   return (
     <aside className="sidebar">

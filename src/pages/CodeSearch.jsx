@@ -26,7 +26,6 @@ export default function CodeSearch() {
   const [searched, setSearched] = useState(false);
 
   const runSearch = () => {
-    // dummy backend simulation
     setResults(DUMMY_BACKEND_RESULTS);
     setSearched(true);
   };
@@ -42,7 +41,7 @@ export default function CodeSearch() {
       <div className="code-search">
         <h1>Code Search</h1>
 
-        {/* MAIN SEARCH */}
+        {}
         <div className="search-row">
           <div className="search-input">
             <Search />
@@ -65,7 +64,7 @@ export default function CodeSearch() {
           </select>
         </div>
 
-        {/* AI SEARCH */}
+        {}
         <div className="ai-row">
           <Sparkles />
           <input
@@ -79,7 +78,7 @@ export default function CodeSearch() {
           </button>
         </div>
 
-        {/* FILTERS */}
+        {}
         <div className="filters">
           <label htmlFor="onlyActive">
             <input
@@ -113,7 +112,7 @@ export default function CodeSearch() {
           </button>
         </div>
 
-        {/* RESULTS */}
+        {}
         {searched && (
           <div className="results">
             <h2>Search Results</h2>

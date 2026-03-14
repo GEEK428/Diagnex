@@ -4,8 +4,6 @@ import "./Profile.css";
 
 export default function Profile() {
   const [editing, setEditing] = useState(false);
-
-  // Mock user data (later comes from backend)
   const [profile, setProfile] = useState({
     name: "",
     email: "doctor@hospital.ac.in",
@@ -18,7 +16,6 @@ export default function Profile() {
     setProfile({ ...profile, [e.target.name]: e.target.value });
 
   const handleSave = () => {
-    // later → API call
     setEditing(false);
   };
 
@@ -53,7 +50,7 @@ export default function Profile() {
           )}
         </div>
 
-        {/* Profile fields */}
+        {}
         <div className="profile-grid">
           <Field
             label="Full Name"
@@ -96,7 +93,7 @@ export default function Profile() {
           />
         </div>
 
-        {/* License Upload */}
+        {}
         <div className="upload-section">
           <label className="upload-btn">
             <FaUpload /> Upload Medical License
@@ -107,8 +104,6 @@ export default function Profile() {
     </div>
   );
 }
-
-/* Reusable field component */
 function Field({ label, value, editing, name, onChange }) {
   return (
     <div className="profile-field">

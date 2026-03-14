@@ -23,11 +23,8 @@ export default function CodeSystems() {
 
   const handleSave = () => {
     if (!form.name || !form.version || !form.url) return;
-
-    const now = new Date().toISOString(); // ✅ single source of truth
-
+    const now = new Date().toISOString(); 
     setSystems((prev) => {
-      // EDIT MODE
       if (editIndex !== null) {
         const updated = [...prev];
         updated[editIndex] = {

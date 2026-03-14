@@ -57,11 +57,11 @@ export default function AdminImport() {
           Upload CSV files to bulk import concepts into a code system.
         </p>
 
-        {/* Upload Card */}
+        {}
         <div className="upload-card">
           <h2>Upload CSV File</h2>
 
-          {/* Code System */}
+          {}
           <label className="field">
             <span className="label">
               Code System <span className="required">*</span>
@@ -76,7 +76,7 @@ export default function AdminImport() {
             </select>
           </label>
 
-          {/* CSV Upload */}
+          {}
           <div className="field">
             <span className="label">
               CSV File <span className="required">*</span>
@@ -104,7 +104,7 @@ export default function AdminImport() {
             </div>
           </div>
 
-          {/* Info Line */}
+          {}
           <div className="import-info">
             <Shield size={14} />
             <span>
@@ -113,7 +113,7 @@ export default function AdminImport() {
           </div>
         </div>
 
-        {/* Upload Progress */}
+        {}
         {uploads.length > 0 && (
           <div className="upload-progress">
             {uploads.map((u) => (
@@ -135,8 +135,7 @@ export default function AdminImport() {
             ))}
           </div>
         )}
-
-        {/* Import History (Header Only) */}
+        {}
         <div className="history-header">
           <h2>Import History</h2>
           <p>No imports to display yet.</p>
