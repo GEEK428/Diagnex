@@ -1,0 +1,154 @@
+.sidebar {
+  width: 220px;
+  background: #eaf0f4;
+  border-right: 1px solid #dde6ec;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 100%;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 18px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.side-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: #4b5d67;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 2px;
+}
+
+.side-item svg {
+  color: #647b6d;
+  transition: transform 0.2s;
+}
+
+.side-item:hover {
+  background: rgba(108, 158, 122, 0.08);
+  color: #1a2c24;
+}
+
+.side-item:hover svg {
+  transform: translateX(2px);
+  color: #1a2c24;
+}
+
+.side-item.active {
+  background: #cbd5e1;
+  color: #1a2c24;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.side-item.active svg {
+  color: #1a2c24;
+}
+
+/* Base style for admin variants but active remains unified */
+.side-item-admin {
+  background: rgba(108, 158, 122, 0.05);
+  border: 1px solid rgba(108, 158, 122, 0.1);
+}
+
+/* Specific Style for Code Systems - reverting to simple style */
+.side-item-systems {
+  border: 1px solid transparent;
+}
+
+
+.sidebar-bottom {
+  padding: 12px 10px 14px;
+  border-top: 1px solid #dbe5ec;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.side-item-bottom {
+  color: #4f5f68;
+}
+
+.side-logout {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.side-logout:hover {
+  background: #fdeeee;
+  color: #bc3d3d;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .side-item {
+    justify-content: center;
+    font-size: 0;
+    padding: 10px;
+  }
+
+  .side-item svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .side-item span {
+    display: none;
+  }
+}
+
+body.dark-mode .sidebar {
+  background: #0f1b25;
+  border-right-color: #1f3442;
+}
+
+body.dark-mode .side-item {
+  color: #8ba7b6;
+}
+
+body.dark-mode .side-item:hover {
+  background: #162633;
+  color: #d5edf3;
+}
+
+body.dark-mode .side-item.active {
+  background: #162633;
+  color: #3cb2b6;
+}
+
+body.dark-mode .sidebar-bottom {
+  border-top-color: #1f3442;
+}
+
+body.dark-mode .side-item-systems {
+  background: rgba(60, 178, 182, 0.1);
+  color: #3cb2b6;
+  border-color: rgba(60, 178, 182, 0.2);
+}
+
+body.dark-mode .side-item-systems:hover {
+  background: rgba(60, 178, 182, 0.15);
+  color: #d1f3f5;
+}
+
+body.dark-mode .side-item-systems.active {
+  background: #3cb2b6;
+  color: #0d1b26;
+  box-shadow: 0 4px 12px rgba(60, 178, 182, 0.3);
+}

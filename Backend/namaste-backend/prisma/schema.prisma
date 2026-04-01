@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CodeSystem {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  displayName String?   @map("display_name")
+  description String?
+  version     String?
+  type        SystemType @default(LOCAL)
+  isActive    Boolean   @default(true) @map("is_active")
+  sourceUrl   String?   @map("source_url")
+  createdBy   String?   @map("created_by")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  concepts    Concept[]
+  versions    SystemVersion[]
+
+  @@map("code_systems")
+}
+
+model Concept {
+  id          Int       @id @default(autoincrement())
+  code        String
+  displayName String    @map("display_name")
+  description String?
+  isActive    Boolean   @default(true) @map("is_active")
+  lifecycleStatus ConceptLifecycleStatus @default(ACTIVE) @map("lifecycle_status")
+  deactivatedAt DateTime? @map("deactivated_at")
+  archivedAt   DateTime? @map("archived_at")
+  tags        String[]  @default([])
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  createdBy   String?   @map("created_by")
+  
+  systemId    Int       @map("system_id")
+  codeSystem  CodeSystem @relation(fields: [systemId], references: [id], onDelete: Restrict)
+
+  mappingsFrom Mapping[] @relation("FromMappings")
+  mappingsTo   Mapping[] @relation("ToMappings")
+
+  @@unique([code, systemId])
+  @@index([displayName])
+  @@index([code])
+  @@map("concepts")
+}
+
+model Mapping {
+  id              Int      @id @default(autoincrement())
+  sourceConceptId Int      @map("source_concept_id")
+  targetConceptId Int      @map("target_concept_id")
+  confidence      Float?
+  status          String   @default("PENDING") // PENDING, VERIFIED, REJECTED
+  mappingType     String?  @map("mapping_type")
+  rejectionReason String?  @map("rejection_reason")
+  verifiedBy      String?  @map("verified_by")
+  verifiedAt      DateTime? @map("verified_at")
+  createdBy       String?  @map("created_by")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  sourceConcept Concept @relation("FromMappings", fields: [sourceConceptId], references: [id], onDelete: Restrict)
+  targetConcept Concept @relation("ToMappings", fields: [targetConceptId], references: [id], onDelete: Restrict)
+
+  @@index([sourceConceptId])
+  @@index([targetConceptId])
+  @@map("mappings")
+}
+
+model SystemVersion {
+  id           Int       @id @default(autoincrement())
+  systemId     Int       @map("system_id")
+  version      String
+  importedAt   DateTime  @default(now()) @map("imported_at")
+  conceptCount Int       @map("concept_count")
+  importedBy   String?   @map("imported_by")
+  notes        String?
+
+  system CodeSystem @relation(fields: [systemId], references: [id], onDelete: Cascade)
+
+  @@index([systemId])
+  @@map("system_versions")
+}
+
+enum SystemType {
+  AUTHORITY
+  LOCAL
+}
+
+enum ConceptLifecycleStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+}

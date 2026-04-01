@@ -1,0 +1,45 @@
+.home-page {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-card {
+  width: 100%;
+  max-width: 980px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 80px 40px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.home-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 22px;
+}
+
+.home-card h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.home-card p {
+  max-width: 520px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b7280;
+}

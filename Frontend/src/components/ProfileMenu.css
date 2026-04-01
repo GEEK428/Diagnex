@@ -1,0 +1,68 @@
+.profile-menu {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  width: 190px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  padding: 6px 0;
+  z-index: 1000;
+}
+
+.menu-item {
+  padding: 10px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: #374151;
+  transition: background 0.15s;
+}
+
+.menu-item:hover {
+  background: #f6f8fb;
+}
+
+.menu-divider {
+  height: 1px;
+  background: #f1f5f9;
+  margin: 4px 0;
+}
+
+.menu-item.logout {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.menu-item.logout:hover {
+  background: #fef2f2;
+}
+
+body.dark-mode .profile-menu {
+  background: #0d1b26;
+  border-color: #1e3040;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .menu-item {
+  color: #8db0bc;
+}
+
+body.dark-mode .menu-item:hover {
+  background: #162330;
+}
+
+body.dark-mode .menu-divider {
+  background: #1e3040;
+}
+
+body.dark-mode .menu-item.logout {
+  color: #f87171;
+}
+
+body.dark-mode .menu-item.logout:hover {
+  background: rgba(220,38,38,0.12);
+}

@@ -1,0 +1,31 @@
+.app-shell {
+  display: flex;
+  height: calc(100vh - 60px);
+  background: #f1f5f8;
+  overflow: hidden;
+}
+
+.app-main {
+  flex: 1;
+  padding: 18px 20px;
+  overflow-y: auto;
+  background: #f1f5f8;
+}
+
+@media (max-width: 960px) {
+  .app-shell {
+    height: calc(100vh - 60px);
+  }
+
+  .app-main {
+    padding: 14px;
+  }
+}
+
+body.dark-mode .app-shell {
+  background: #0b1220;
+}
+
+body.dark-mode .app-main {
+  background: #0b1220;
+}

@@ -1,0 +1,124 @@
+.app-header {
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eaf0f4;
+  border-bottom: 1px solid #d1e0d7;
+}
+
+/* ── Brand ─────────────────────────────────────── */
+.header-brand {
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.header-brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2b4c3b, #1a2e24);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(26,46,36,0.35);
+}
+
+.header-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header-brand-name {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #1a2e24;
+  line-height: 1;
+}
+
+.header-brand-sub {
+  font-size: 9px;
+  color: #647b6d;
+  margin: 2px 0 0;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ── Actions (bell + avatar) ────────────────────── */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 30px; /* shift left from screen edge */
+}
+
+.header-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5f6d;
+}
+
+.header-icon-btn:hover {
+  background: #e6eef2;
+}
+
+/* ── Avatar ─────────────────────────────────────── */
+.header-avatar-wrap {
+  position: relative;
+}
+
+.header-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #2b4c3b;
+  background: linear-gradient(135deg, #1a2c24, #2b4c3b);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: box-shadow 0.2s;
+}
+
+.header-avatar:hover {
+  box-shadow: 0 6px 16px rgba(43, 76, 59, 0.3);
+}
+
+/* ── Dark mode ───────────────────────────────────── */
+body.dark-mode .app-header {
+  background: #0d1b26;
+  border-bottom-color: #1e3040;
+}
+
+body.dark-mode .header-brand-name {
+  color: #e2e8f0;
+}
+
+body.dark-mode .header-brand-sub {
+  color: rgba(248,250,252,0.7);
+}
+
+body.dark-mode .header-icon-btn {
+  color: #89a5b5;
+}
