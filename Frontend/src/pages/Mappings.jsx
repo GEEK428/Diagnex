@@ -199,14 +199,14 @@ export default function Mappings() {
                 <tbody>
                   {mappingResults.map(m => (
                     <tr key={m.id} className="mapping-row-item">
-                      <td>
+                      <td data-label="Source Concept">
                         <div className="concept-stack">
                           <span className="c-code">{m.sourceCode}</span>
                           <span className="c-label">{m.sourceLabel}</span>
                           <span className="c-system">{m.sourceSystem}</span>
                         </div>
                       </td>
-                      <td style={{ textAlign: "center" }}>
+                      <td data-label="Relation" style={{ textAlign: "center" }}>
                         <div className="rel-cell">
                           <div className={`rel-badge ${m.relationship}`}>
                             {MAPPING_SYMBOLS[m.relationship.toUpperCase()] || "≈"} {m.relationship}
@@ -214,20 +214,20 @@ export default function Mappings() {
                           <ChevronRight size={14} className="rel-arrow" />
                         </div>
                       </td>
-                      <td>
+                      <td data-label="Target Concept">
                         <div className="concept-stack">
                           <span className="c-code">{m.targetCode}</span>
                           <span className="c-label">{m.targetLabel}</span>
                           <span className="c-system">{m.targetSystem}</span>
                         </div>
                       </td>
-                      <td>
+                      <td data-label="Trust">
                         <div className="confidence-indicator">
                           <div className="conf-bar-mini"><div className="fill" style={{ width: `${m.confidence * 100}%` }}></div></div>
                           <span>{Math.round(m.confidence * 100)}%</span>
                         </div>
                       </td>
-                      <td>
+                      <td data-label="Actions">
                          <button className="btn-view-detail" onClick={() => openConcept(m.sourceConceptId || m.id)}>
                            Details
                          </button>
@@ -375,26 +375,26 @@ export default function Mappings() {
                         <tbody>
                           {concept.mappingsFrom?.map(m => (
                             <tr key={m.id}>
-                              <td>
+                              <td data-label="Link">
                                 <div className="mini-concept">
                                   <strong>{m.targetConcept.code}</strong>
                                   <span>{m.targetConcept.codeSystem.name} (Target)</span>
                                 </div>
                               </td>
-                              <td><span className={`map-badge ${m.mappingType.toLowerCase()}`}>{m.mappingType}</span></td>
-                              <td>{(m.confidence * 100).toFixed(0)}%</td>
+                              <td data-label="Relationship"><span className={`map-badge ${m.mappingType.toLowerCase()}`}>{m.mappingType}</span></td>
+                              <td data-label="Confidence">{(m.confidence * 100).toFixed(0)}%</td>
                             </tr>
                           ))}
                           {concept.mappingsTo?.map(m => (
                             <tr key={m.id}>
-                              <td>
+                              <td data-label="Link">
                                 <div className="mini-concept">
                                   <strong>{m.sourceConcept.code}</strong>
                                   <span>{m.sourceConcept.codeSystem.name} (Source)</span>
                                 </div>
                               </td>
-                              <td><span className={`map-badge ${m.mappingType.toLowerCase()}`}>FROM {m.mappingType}</span></td>
-                              <td>{(m.confidence * 100).toFixed(0)}%</td>
+                              <td data-label="Relationship"><span className={`map-badge ${m.mappingType.toLowerCase()}`}>FROM {m.mappingType}</span></td>
+                              <td data-label="Confidence">{(m.confidence * 100).toFixed(0)}%</td>
                             </tr>
                           ))}
                         </tbody>

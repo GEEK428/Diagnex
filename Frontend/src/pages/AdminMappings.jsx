@@ -274,30 +274,30 @@ export default function AdminMappings() {
               ) : mappings.map(m => (
                 <tr key={m.id}>
                   {activeTab === "PENDING" && (
-                    <td>
+                    <td data-label="Select">
                       <input type="checkbox" checked={selectedIds.includes(m.id)} onChange={() => toggleSelect(m.id)} />
                     </td>
                   )}
-                  <td>
+                  <td data-label="Source Concept">
                     <div className="concept-cell">
                       <span className="concept-code">{m.sourceCode}</span>
                       <span className="concept-name" title={m.sourceLabel}>{m.sourceLabel}</span>
                       <span style={{ fontSize: 10, color: "var(--soft-sage)" }}>{m.sourceSystem}</span>
                     </div>
                   </td>
-                  <td>
+                  <td data-label="Relationship">
                     <span className={`relationship-badge ${m.relationship}`}>
                       {m.relationship}
                     </span>
                   </td>
-                  <td>
+                  <td data-label="Target Concept">
                     <div className="concept-cell">
                       <span className="concept-code">{m.targetCode}</span>
                       <span className="concept-name" title={m.targetLabel}>{m.targetLabel}</span>
                       <span style={{ fontSize: 10, color: "var(--soft-sage)" }}>{m.targetSystem}</span>
                     </div>
                   </td>
-                  <td>
+                  <td data-label="Confidence">
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <div className="confidence-bar">
                         <div className="confidence-fill" style={{ width: `${(m.confidence || 0) * 100}%` }}></div>
@@ -305,10 +305,10 @@ export default function AdminMappings() {
                       <span style={{ fontSize: 12, fontWeight: 700 }}>{Math.round((m.confidence || 0)*100)}%</span>
                     </div>
                   </td>
-                  <td style={{ fontSize: 11, color: "var(--sage-muted)" }}>
+                  <td data-label="Source" style={{ fontSize: 11, color: "var(--sage-muted)" }}>
                     {m.createdBy}<br/>{new Date(m.createdAt).toLocaleDateString()}
                   </td>
-                  <td>
+                  <td data-label="Status">
                     <span className={`status-pill ${m.status.toLowerCase()}`}>
                       {m.status === "PENDING" && < Zap size={10} />}
                       {m.status === "VERIFIED" && <Check size={10} />}

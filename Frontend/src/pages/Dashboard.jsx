@@ -126,12 +126,12 @@ export default function Dashboard() {
                     
                     return (
                       <tr key={s._id}>
-                        <td style={{ fontWeight: 600 }}>{queryText}</td>
-                        <td>
+                        <td data-label="Query" style={{ fontWeight: 600 }}>{queryText}</td>
+                        <td data-label="Source">
                           {matchSource} 
                           {isAi && conf && <span style={{fontSize: 11, color: "var(--sage-muted)", marginLeft: 6}}>({conf})</span>}
                         </td>
-                        <td style={{ color: "var(--sage-muted)", fontSize: 12 }}>
+                        <td data-label="Time" style={{ color: "var(--sage-muted)", fontSize: 12 }}>
                           {new Date(s.timestamp).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' })}
                         </td>
                       </tr>
@@ -175,9 +175,9 @@ export default function Dashboard() {
                 <tbody>
                   {stats.myRequests.slice(0, 3).map(req => (
                     <tr key={req._id}>
-                      <td style={{ fontWeight: 600 }}>{req.term}</td>
-                      <td>{getStatusBadge(req.status)}</td>
-                      <td>
+                      <td data-label="Term Requested" style={{ fontWeight: 600 }}>{req.term}</td>
+                      <td data-label="Status">{getStatusBadge(req.status)}</td>
+                      <td data-label="Admin Response">
                         {req.status === "REJECTED" ? (
                           <span style={{color: "#dc2626", fontSize: 11.5}}>{req.rejectionReason || "Declined without comment"}</span>
                         ) : req.status === "APPROVED" ? (
@@ -216,9 +216,9 @@ export default function Dashboard() {
                 <tbody>
                   {stats.myRequests.map(req => (
                     <tr key={req._id}>
-                      <td style={{ fontWeight: 600 }}>{req.term}</td>
-                      <td>{getStatusBadge(req.status)}</td>
-                      <td>
+                      <td data-label="Term Requested" style={{ fontWeight: 600 }}>{req.term}</td>
+                      <td data-label="Status">{getStatusBadge(req.status)}</td>
+                      <td data-label="Admin Response">
                         {req.status === "REJECTED" ? (
                           <span style={{color: "#dc2626", fontSize: 11.5}}>{req.rejectionReason || "Declined without comment"}</span>
                         ) : req.status === "APPROVED" ? (
@@ -227,7 +227,7 @@ export default function Dashboard() {
                           <span style={{color: "#a4bba8", fontSize: 11.5}}>Awaiting review</span>
                         )}
                       </td>
-                      <td style={{ fontSize: 11, color: "var(--sage-muted)" }}>
+                      <td data-label="Date" style={{ fontSize: 11, color: "var(--sage-muted)" }}>
                         {new Date(req.createdAt).toLocaleDateString()}
                       </td>
                     </tr>

@@ -211,14 +211,14 @@ export default function ConceptRequests() {
               <tbody>
                 {requests.map(req => (
                   <tr key={req._id}>
-                    <td>
+                    <td data-label="Requested Term">
                       <strong>{req.term}</strong>
                       {req.description && <span className="cr-desc-sub">{req.description}</span>}
                     </td>
-                    <td>{req.suggestedSystem || "Any"}</td>
-                    <td>{new Date(req.createdAt).toLocaleDateString()}</td>
-                    <td>{getStatusBadge(req.status)}</td>
-                    <td>
+                    <td data-label="Target System">{req.suggestedSystem || "Any"}</td>
+                    <td data-label="Date">{new Date(req.createdAt).toLocaleDateString()}</td>
+                    <td data-label="Status">{getStatusBadge(req.status)}</td>
+                    <td data-label="Admin Reply / Code">
                       {req.status === "REJECTED" ? (
                         <span className="cr-rejected-text">{req.rejectionReason}</span>
                       ) : req.status === "APPROVED" ? (

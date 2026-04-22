@@ -747,25 +747,84 @@
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  .history-card th,
-  .history-card td {
-    font-size: 10.5px;
-    padding: 9px 10px;
+@media (max-width: 960px) {
+  .import-page {
+    padding: 0 0 16px;
   }
-
-  .result-summary {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .import-card,
-  .history-card {
+  
+  .import-head {
     padding: 16px;
   }
-
+  
+  .import-card, .history-card {
+    padding: 12px;
+  }
+  
+  .history-card table {
+    min-width: unset;
+  }
+  
+  .history-card thead {
+    display: none;
+  }
+  
+  .history-card table,
+  .history-card tbody,
+  .history-card tr,
+  .history-card td {
+    display: block;
+    width: 100%;
+  }
+  
+  .history-card tr {
+    margin-bottom: 16px;
+    border: 1px solid #e2ede5;
+    border-radius: 12px;
+    padding: 8px 0;
+  }
+  
+  .history-card td {
+    padding: 8px 12px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .history-card td::before {
+    content: attr(data-label);
+    font-size: 10px;
+    font-weight: 700;
+    color: #538165;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .file-name {
+    max-width: 100%;
+    white-space: normal;
+  }
+  
+  .history-actions {
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .history-actions button {
+    flex: 1;
+  }
+  
   .result-summary {
     grid-template-columns: 1fr 1fr;
+  }
+  
+  .history-pagination {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .history-pagination button {
+    width: 100%;
   }
 }

@@ -827,3 +827,54 @@ body.dark-mode .drawer-section {
 body.dark-mode .drawer-section h3 { color: #4a6a7a; }
 body.dark-mode .drawer-section p { color: #8ba7b6; }
 body.dark-mode .drawer-section strong { color: #d0eaee; }
+
+/* ================= RESPONSIVE OVERRIDES ================= */
+@media (max-width: 960px) {
+  .cs-hero-title {
+    font-size: 26px;
+  }
+  
+  .cs-card {
+    padding: 18px;
+  }
+  
+  .cs-card-body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cs-search-bar {
+    height: 46px;
+  }
+  
+  .cs-freq-chips {
+    gap: 8px;
+  }
+  
+  .cs-chip {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+  
+  .cs-execute-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .cs-result-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .cs-result-arrow {
+    display: none;
+  }
+  
+  .cs-modal {
+    padding: 12px;
+  }
+  
+  .detail-drawer {
+    width: 100%;
+  }
+}

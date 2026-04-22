@@ -149,28 +149,28 @@ export default function CodeSystems() {
               ) : (
                 systems.map((sys) => (
                   <tr key={sys.id}>
-                    <td>
+                    <td data-label="System Info">
                       <div className="name-cell">{sys.displayName || sys.name}</div>
                       <div className="truncate" style={{ fontSize: "11px", color: "#647b6d", marginTop: "2px" }}>
                         {sys.description || "—"}
                       </div>
                     </td>
-                    <td>
+                    <td data-label="Version">
                       <span className="version-badge" style={{ background: "#f9fafb", color: "#4b5563" }}>
                         {sys.version || "1.0"}
                       </span>
                     </td>
-                    <td>
+                    <td data-label="Concepts">
                       <span className={`count-badge ${(sys.conceptCount || 0) === 0 ? "zero" : ""}`}>
                         {(sys.conceptCount || 0).toLocaleString()} {(sys.conceptCount || 0) === 1 ? 'concept' : 'concepts'}
                       </span>
                     </td>
-                    <td>
+                    <td data-label="Last Updated">
                       {new Date(sys.lastUpdated).toLocaleDateString("en-US", {
                         day: "numeric", month: "short", year: "numeric"
                       })}
                     </td>
-                    <td>
+                    <td data-label="Status">
                       <label className="toggle-switch" title={sys.isActive ? "Deactivate" : "Activate"}>
                         <input
                           type="checkbox"
@@ -180,7 +180,7 @@ export default function CodeSystems() {
                         <span className="toggle-slider"></span>
                       </label>
                     </td>
-                    <td>
+                    <td data-label="Actions">
                       <button className="sys-action-btn" onClick={() => setFormModal({ open: true, mode: "edit", data: sys })} title="Edit System">
                         <Edit2 size={16} />
                       </button>

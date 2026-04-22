@@ -6,6 +6,37 @@
   justify-content: space-between;
   background: #eaf0f4;
   border-bottom: 1px solid #d1e0d7;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #1a2e24;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(43, 76, 59, 0.1);
+}
+
+@media (max-width: 960px) {
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* ── Brand ─────────────────────────────────────── */

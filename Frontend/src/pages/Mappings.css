@@ -746,3 +746,99 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+/* ================= RESPONSIVE OVERRIDES ================= */
+@media (max-width: 960px) {
+  .doc-mappings-page {
+    padding: 16px;
+  }
+  
+  .doc-mappings-hero {
+    padding: 24px 16px;
+    margin-bottom: 24px;
+  }
+  
+  .mappings-header-text h1 {
+    font-size: 24px;
+  }
+  
+  .doc-search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .doc-search-btn {
+    width: 100%;
+  }
+  
+  .doc-results-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .doc-mapping-table thead {
+    display: none;
+  }
+  
+  .doc-mapping-table, 
+  .doc-mapping-table tbody, 
+  .doc-mapping-table tr, 
+  .doc-mapping-table td {
+    display: block;
+    width: 100%;
+  }
+  
+  .doc-mapping-table tr {
+    background: #fff;
+    margin-bottom: 16px;
+    border: 1px solid var(--doc-border);
+    border-radius: 16px;
+    padding: 8px 0;
+  }
+  
+  .doc-mapping-table td {
+    padding: 10px 16px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .doc-mapping-table td::before {
+    content: attr(data-label);
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--doc-sage-muted);
+    letter-spacing: 0.5px;
+  }
+  
+  .rel-cell {
+    align-items: flex-start;
+  }
+  
+  .confidence-indicator {
+    width: 100%;
+  }
+  
+  .confidence-indicator span {
+    text-align: left;
+  }
+  
+  .doc-modal-content {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+  
+  .header-identity h3 {
+    font-size: 22px;
+  }
+  
+  .modal-actions-footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btn-close-modal {
+    width: 100%;
+  }
+}

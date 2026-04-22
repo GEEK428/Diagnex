@@ -359,8 +359,8 @@ export default function AdminImport() {
           )}
           {rows.map((row) => (
             <tr key={row.id}>
-              <td className="file-name" title={row.fileName || "-"}>{row.fileName || "-"}</td>
-              <td>
+              <td data-label="File" className="file-name" title={row.fileName || "-"}>{row.fileName || "-"}</td>
+              <td data-label="Code System">
                 <span style={{
                   fontSize: "10px", fontWeight: 700,
                   background: "rgba(108,158,122,0.1)", color: "#2b4c3b",
@@ -369,14 +369,14 @@ export default function AdminImport() {
                   {row.codeSystem || "-"}
                 </span>
               </td>
-              <td style={{ fontSize: "11px", color: "#647b6d" }}>{formatDate(row.importTime)}</td>
-              <td style={{ fontWeight: 600 }}>{Number(row.rowCount || 0).toLocaleString()}</td>
-              <td>
+              <td data-label="Timestamp" style={{ fontSize: "11px", color: "#647b6d" }}>{formatDate(row.importTime)}</td>
+              <td data-label="Rows" style={{ fontWeight: 600 }}>{Number(row.rowCount || 0).toLocaleString()}</td>
+              <td data-label="Status">
                 <span className={`status-pill ${row.status === "SUCCESS" ? "ok" : "bad"}`}>
                   {row.status === "SUCCESS" ? "Success" : "Failed"}
                 </span>
               </td>
-              <td>
+              <td data-label="Actions">
                 <div className="history-actions">
                   <button type="button" title="Download uploaded CSV" onClick={() => handleDownloadHistory(row)}>
                     <Download size={13} />

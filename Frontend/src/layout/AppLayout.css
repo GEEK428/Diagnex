@@ -3,6 +3,7 @@
   height: calc(100vh - 60px);
   background: #f1f5f8;
   overflow: hidden;
+  position: relative;
 }
 
 .app-main {
@@ -10,6 +11,7 @@
   padding: 18px 20px;
   overflow-y: auto;
   background: #f1f5f8;
+  transition: padding 0.2s;
 }
 
 @media (max-width: 960px) {
@@ -18,7 +20,8 @@
   }
 
   .app-main {
-    padding: 14px;
+    padding: 12px;
+    width: 100%;
   }
 }
 

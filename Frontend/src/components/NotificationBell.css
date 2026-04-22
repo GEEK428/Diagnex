@@ -188,3 +188,14 @@
   background: #fef2f2;
   border-color: #fca5a5;
 }
+
+@media (max-width: 480px) {
+  .notification-dropdown {
+    width: 280px;
+    position: fixed;
+    top: 60px;
+    right: 16px;
+    left: 16px;
+    margin: 0 auto;
+  }
+}

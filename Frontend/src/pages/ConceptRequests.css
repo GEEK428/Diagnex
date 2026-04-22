@@ -272,3 +272,71 @@
   font-style: italic;
   font-size: 12px;
 }
+
+/* ================= RESPONSIVE OVERRIDES ================= */
+@media (max-width: 960px) {
+  .cr-page {
+    padding: 16px;
+  }
+  
+  .cr-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .cr-form-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .cr-form-actions {
+    flex-direction: column;
+  }
+  
+  .cr-form-actions button {
+    width: 100%;
+  }
+  
+  .cr-table thead {
+    display: none;
+  }
+  
+  .cr-table, 
+  .cr-table tbody, 
+  .cr-table tr, 
+  .cr-table td {
+    display: block;
+    width: 100%;
+  }
+  
+  .cr-table tr {
+    margin-bottom: 16px;
+    border: 1px solid #d1e0d7;
+    border-radius: 12px;
+    background: #fff;
+    padding: 8px 0;
+  }
+  
+  .cr-table td {
+    padding: 8px 16px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .cr-table td::before {
+    content: attr(data-label);
+    font-size: 10px;
+    font-weight: 700;
+    color: #3b5a4a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .cr-desc-sub {
+    max-width: 100%;
+  }
+}

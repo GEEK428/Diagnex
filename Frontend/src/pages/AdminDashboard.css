@@ -464,3 +464,60 @@
   font-style: italic;
   padding: 4px 0;
 }
+
+/* ================= RESPONSIVE OVERRIDES ================= */
+@media (max-width: 960px) {
+  .admin-dash {
+    padding: 16px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .stat-card {
+    padding: 16px;
+  }
+  
+  .stat-value {
+    font-size: 24px;
+  }
+  
+  .dash-content-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .registration-alert-banner {
+    flex-direction: column;
+    padding: 16px;
+    align-items: flex-start;
+  }
+  
+  .alert-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .alert-link-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .search-volume-wrap {
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 40px;
+  }
+  
+  .v-bar {
+    min-width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

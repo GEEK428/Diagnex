@@ -484,3 +484,104 @@ tbody tr:hover {
   margin-left: 8px;
   opacity: 0.7;
 }
+
+/* ================= RESPONSIVE OVERRIDES ================= */
+@media (max-width: 960px) {
+  .admin-mappings {
+    padding: 16px;
+  }
+  
+  .mappings-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .mappings-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .mappings-actions button {
+    width: 100%;
+  }
+  
+  .mappings-tabs {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 8px;
+  }
+  
+  .filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .bulk-toolbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+  
+  .table-wrap thead {
+    display: none;
+  }
+  
+  .table-wrap table,
+  .table-wrap tbody,
+  .table-wrap tr,
+  .table-wrap td {
+    display: block;
+    width: 100%;
+  }
+  
+  .table-wrap tr {
+    margin-bottom: 16px;
+    border: 1px solid var(--sage-border);
+    border-radius: 16px;
+    background: #fff;
+    padding: 8px 0;
+  }
+  
+  .table-wrap td {
+    padding: 8px 16px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .table-wrap td::before {
+    content: attr(data-label);
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--sage-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .concept-name {
+    max-width: 100%;
+    white-space: normal;
+  }
+  
+  .modal-content {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .modal-footer button {
+    width: 100%;
+  }
+}

@@ -530,3 +530,92 @@ input:checked + .toggle-slider:before {
   color: #166534;
   border: 1px solid #bbf7d0;
 }
+
+/* ================= RESPONSIVE OVERRIDES ================= */
+@media (max-width: 960px) {
+  .systems-page {
+    padding: 0 0 16px;
+  }
+  
+  .systems-head {
+    padding: 16px;
+  }
+  
+  .systems-head-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .primary-btn {
+    width: 100%;
+  }
+  
+  .systems-card {
+    padding: 12px;
+  }
+  
+  .systems-card table {
+    min-width: unset;
+  }
+  
+  .systems-card thead {
+    display: none;
+  }
+  
+  .systems-card table,
+  .systems-card tbody,
+  .systems-card tr,
+  .systems-card td {
+    display: block;
+    width: 100%;
+  }
+  
+  .systems-card tr {
+    margin-bottom: 16px;
+    border: 1px solid #e2ede5;
+    border-radius: 12px;
+    padding: 8px 0;
+  }
+  
+  .systems-card td {
+    padding: 8px 12px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .systems-card td::before {
+    content: attr(data-label);
+    font-size: 10px;
+    font-weight: 700;
+    color: #538165;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .truncate {
+    max-width: 100%;
+    white-space: normal;
+  }
+  
+  .sys-action-btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .modal-footer button {
+    width: 100%;
+  }
+}

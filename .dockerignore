@@ -1,0 +1,9 @@
+# Root .dockerignore
+**/node_modules
+**/build
+**/dist
+**/.venv
+**/__pycache__
+**/*.log
+.git
+.env

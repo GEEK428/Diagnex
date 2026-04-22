@@ -420,9 +420,58 @@ input:checked + .slider:before {
   box-shadow: none;
 }
 
-@media (max-width: 900px) {
-  .set-container { flex-direction: column; }
-  .set-sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; }
-  .set-nav { flex-direction: row; overflow-x: auto; flex: 1; }
-  .set-form-grid { grid-template-columns: 1fr; gap: 16px; }
+@media (max-width: 960px) {
+  .set-page {
+    padding: 20px 16px;
+  }
+  
+  .set-header h1 {
+    font-size: 22px;
+  }
+  
+  .set-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .set-sidebar {
+    width: 100%;
+  }
+  
+  .set-user-brief {
+    padding: 16px;
+  }
+  
+  .set-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .set-nav button {
+    white-space: nowrap;
+    width: auto;
+    padding: 8px 16px;
+  }
+  
+  .set-form-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 16px;
+  }
+  
+  .set-form-v {
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  .set-panel-header {
+    padding: 20px;
+  }
+  
+  .set-pref-row {
+    padding: 16px 20px;
+  }
 }
