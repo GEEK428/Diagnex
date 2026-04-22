@@ -1,0 +1,53 @@
+services:
+  # 1. Backend Service
+  - type: web
+    name: diagnex-backend
+    env: docker
+    dockerContext: .
+    dockerfilePath: Backend/namaste-backend/Dockerfile
+    plan: free
+    healthCheckPath: /api/v1/auth/me
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
+      - key: DATABASE_URL
+        fromDatabase:
+          name: diagnex-db
+          property: connectionString
+      - key: MONGODB_URI
+        sync: false # Set this in Render Dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: CLIENT_ORIGIN
+        value: https://diagnex-frontend.onrender.com # Change this if your frontend URL is different
+      - key: ML_SERVICE_URL
+        value: http://diagnex-ml:8000/predict
+
+  # 2. ML Service
+  - type: web
+    name: diagnex-ml
+    env: docker
+    dockerContext: .
+    dockerfilePath: ML/Namaste-Prediction-Model/Dockerfile
+    plan: free # Note: Python ML may need a 'Starter' plan if it runs out of RAM
+    healthCheckPath: /
+
+  # 3. Frontend Service
+  - type: web
+    name: diagnex-frontend
+    env: docker
+    dockerContext: .
+    dockerfilePath: Frontend/Dockerfile
+    plan: free
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://diagnex-backend.onrender.com
+
+# 4. Managed PostgreSQL
+databases:
+  - name: diagnex-db
+    plan: free
